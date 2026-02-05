@@ -212,6 +212,11 @@ See `.specify/memory/constitution.md` for code quality, testing, performance, se
 ## Active Technologies
 - Python 3.13+ + None (standard library only per constitution) (001-todo-app)
 - In-memory (Python list + dataclass) (001-todo-app)
+- Next.js (App Router) + TypeScript (002-phase-ii)
+- Python FastAPI + SQLModel (002-phase-ii)
+- Neon Serverless PostgreSQL (002-phase-ii)
+- Better Auth JWT (002-phase-ii)
 
 ## Recent Changes
+- 002-phase-ii: Constitution v2.0.0 - Full-stack web application architecture
 - 001-todo-app: Added Python 3.13+ + None (standard library only per constitution)
