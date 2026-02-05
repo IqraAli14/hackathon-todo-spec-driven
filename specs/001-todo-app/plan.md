@@ -19,7 +19,38 @@ Build a single-user, in-memory todo application with a command-line interface. T
 **Constraints**: No external dependencies, no persistence, single user
 **Scale/Scope**: Single session, typical usage <100 tasks
 
+## Constitution Check
+
+*GATE: Must pass before Phase 0 research. Re-check after Phase 1 design.*
+
+| Principle | Status | Evidence |
+|-----------|--------|----------|
+| I. Spec-Driven Development | ✅ PASS | Plan follows approved spec.md |
+| II. No Manual Code Writing | ✅ PASS | Code via /sp.implement only |
+| III. Python Best Practices | ✅ PASS | dataclass, type hints, PEP 8 planned |
+| IV. Simplicity Over Cleverness | ✅ PASS | Flat structure, no abstractions |
+| V. CLI Usability | ✅ PASS | Command-based with help |
+| VI. Clear Acceptance Criteria | ✅ PASS | 19 Given-When-Then scenarios in spec |
+| VII. Incremental Task IDs | ✅ PASS | Sequential from 1, never reused |
+| VIII. Phase I Scope | ✅ PASS | In-memory, stdlib only, no extras |
+| IX. Hackathon II Compliance | ✅ PASS | Full SDD workflow followed |
+
+**Gate Result**: ALL PASS - Proceeding to design.
+
 ## Project Structure
+
+### Documentation (this feature)
+
+```text
+specs/001-todo-app/
+├── spec.md              # Feature specification
+├── plan.md              # This file
+├── research.md          # Phase 0 research
+├── data-model.md        # Entity definitions
+├── quickstart.md        # Usage guide
+└── checklists/
+    └── requirements.md  # Spec quality checklist
+```
 
 ### Source Code (repository root)
 
@@ -46,6 +77,11 @@ tests/
 └── test_cli.py          # CLI integration tests
 ```
 
+**Structure Decision**: Single project layout selected. This is a simple CLI application with no web/mobile components. The modular structure separates concerns:
+- `models/` - Data structures (Task dataclass)
+- `services/` - Business logic (TaskService class)
+- `cli/` - User interface (command loop, formatting)
+
 ## Architecture Design
 
 ### Module Responsibilities
@@ -68,6 +104,20 @@ User Input → CLI App → Command Handler → Task Service → Task Model
          Formatted Output → User
 ```
 
+### In-Memory Storage Design
+
+```python
+# In TaskService
+class TaskService:
+    _tasks: list[Task]       # Task storage
+    _next_id: int            # Counter (starts at 1, never decrements)
+```
+
+**Key Design Decisions**:
+1. **List storage**: Simple iteration for view, O(n) lookup by ID is acceptable for <100 tasks
+2. **ID counter**: Class attribute, only increments, survives deletions
+3. **No persistence**: Data lost on exit (per spec non-goal)
+
 ### CLI Command Design
 
 | Command | Format | Description |
@@ -80,3 +130,34 @@ User Input → CLI App → Command Handler → Task Service → Task Model
 | `delete` | `delete <id>` | Remove task |
 | `help` | `help` | Show commands |
 | `exit` | `exit` or `quit` | Exit application |
+
+**Input Handling**:
+- Commands are case-insensitive
+- Quoted strings for titles with spaces: `add "Buy groceries" "From the store"`
+- ID validation: must be positive integer
+
+### Error Handling Strategy
+
+| Error Type | Handler | User Message |
+|------------|---------|--------------|
+| Empty title | Validation | "Error: Title cannot be empty" |
+| Invalid ID format | Validation | "Error: Invalid task ID. Please enter a positive number." |
+| Task not found | Service | "Error: Task {id} not found" |
+| Unknown command | CLI | "Error: Unknown command. Type 'help' for available commands." |
+| Empty input | CLI | Re-prompt (no error) |
+
+**Principles**:
+- All errors caught and displayed (no crashes)
+- Messages include actionable guidance
+- Application continues after errors
+
+## Complexity Tracking
+
+> No complexity violations. Design adheres to all constitution principles.
+
+| Check | Status |
+|-------|--------|
+| External dependencies | ✅ None (stdlib only) |
+| Unnecessary abstractions | ✅ None (direct implementation) |
+| Over-engineering | ✅ None (flat, simple structure) |
+| Scope creep | ✅ None (matches spec exactly) |
