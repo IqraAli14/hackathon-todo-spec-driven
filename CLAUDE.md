@@ -208,3 +208,10 @@ Wait for consent; never auto-create ADRs. Group related decisions (stacks, authe
 
 ## Code Standards
 See `.specify/memory/constitution.md` for code quality, testing, performance, security, and architecture principles.
+
+## Active Technologies
+- Python 3.13+ + None (standard library only per constitution) (001-todo-app)
+- In-memory (Python list + dataclass) (001-todo-app)
+
+## Recent Changes
+- 001-todo-app: Added Python 3.13+ + None (standard library only per constitution)
