@@ -25,16 +25,16 @@
 
 **Purpose**: Project initialization and directory structure creation
 
-- [ ] T001 Create backend project structure per plan.md in `backend/`
-- [ ] T002 Create frontend project structure per plan.md in `frontend/`
-- [ ] T003 [P] Initialize Python backend with FastAPI dependencies in `backend/pyproject.toml` and `backend/requirements.txt`
-- [ ] T004 [P] Initialize Next.js frontend with TypeScript and dependencies in `frontend/package.json`
-- [ ] T005 [P] Create backend environment template in `backend/.env.example`
-- [ ] T006 [P] Create frontend environment template in `frontend/.env.example`
-- [ ] T007 [P] Configure backend linting (ruff) in `backend/pyproject.toml`
-- [ ] T008 [P] Configure frontend linting (ESLint) and formatting (Prettier) in `frontend/`
-- [ ] T009 [P] Configure Tailwind CSS in `frontend/tailwind.config.js` and `frontend/postcss.config.js`
-- [ ] T010 [P] Create TypeScript configuration in `frontend/tsconfig.json`
+- [x] T001 Create backend project structure per plan.md in `backend/`
+- [x] T002 Create frontend project structure per plan.md in `frontend/`
+- [x] T003 [P] Initialize Python backend with FastAPI dependencies in `backend/pyproject.toml` and `backend/requirements.txt`
+- [x] T004 [P] Initialize Next.js frontend with TypeScript and dependencies in `frontend/package.json`
+- [x] T005 [P] Create backend environment template in `backend/.env.example`
+- [x] T006 [P] Create frontend environment template in `frontend/.env.example`
+- [x] T007 [P] Configure backend linting (ruff) in `backend/pyproject.toml`
+- [x] T008 [P] Configure frontend linting (ESLint) and formatting (Prettier) in `frontend/`
+- [x] T009 [P] Configure Tailwind CSS in `frontend/tailwind.config.js` and `frontend/postcss.config.js`
+- [x] T010 [P] Create TypeScript configuration in `frontend/tsconfig.json`
 
 ---
 
@@ -46,35 +46,35 @@
 
 ### Backend Core Infrastructure
 
-- [ ] T011 Create Pydantic settings configuration in `backend/app/config.py`
-- [ ] T012 Setup async database connection with SQLModel in `backend/app/database.py`
-- [ ] T013 Initialize Alembic migrations framework in `backend/alembic.ini` and `backend/alembic/`
-- [ ] T014 Create FastAPI application entry point with CORS in `backend/app/main.py`
-- [ ] T015 Implement JWT verification dependency (Better Auth) in `backend/app/api/deps.py`
-- [ ] T016 Create Task SQLModel entity per data-model.md in `backend/app/models/task.py`
-- [ ] T017 Create `backend/app/models/__init__.py` with model exports
-- [ ] T018 Create Alembic migration for tasks table in `backend/alembic/versions/001_create_tasks_table.py`
-- [ ] T019 Create Task Pydantic schemas (TaskCreate, TaskUpdate, TaskRead) in `backend/app/schemas/task.py`
-- [ ] T020 Create `backend/app/schemas/__init__.py` with schema exports
+- [x] T011 Create Pydantic settings configuration in `backend/app/config.py`
+- [x] T012 Setup async database connection with SQLModel in `backend/app/database.py`
+- [x] T013 Initialize Alembic migrations framework in `backend/alembic.ini` and `backend/alembic/`
+- [x] T014 Create FastAPI application entry point with CORS in `backend/app/main.py`
+- [x] T015 Implement JWT verification dependency (Better Auth) in `backend/app/api/deps.py`
+- [x] T016 Create Task SQLModel entity per data-model.md in `backend/app/models/task.py`
+- [x] T017 Create `backend/app/models/__init__.py` with model exports
+- [x] T018 Create Alembic migration for tasks table in `backend/alembic/versions/001_create_tasks_table.py`
+- [x] T019 Create Task Pydantic schemas (TaskCreate, TaskUpdate, TaskRead) in `backend/app/schemas/task.py`
+- [x] T020 Create `backend/app/schemas/__init__.py` with schema exports
 
 ### Frontend Core Infrastructure
 
-- [ ] T021 Configure Better Auth server in `frontend/auth.ts`
-- [ ] T022 Configure Drizzle ORM for Better Auth in `frontend/drizzle.config.ts`
-- [ ] T023 Create Better Auth database schema in `frontend/src/lib/db/schema.ts`
-- [ ] T024 Create Better Auth client configuration in `frontend/src/lib/auth.ts`
-- [ ] T025 Create Better Auth React hooks in `frontend/src/lib/auth-client.ts`
-- [ ] T026 Setup Better Auth API routes in `frontend/src/app/api/auth/[...all]/route.ts`
-- [ ] T027 Create root layout with providers in `frontend/src/app/layout.tsx`
-- [ ] T028 Create base TypeScript interfaces in `frontend/src/types/index.ts`
-- [ ] T029 Create API client with JWT support in `frontend/src/lib/api.ts`
-- [ ] T030 Create form validation utilities in `frontend/src/lib/validations.ts`
+- [x] T021 Configure Better Auth server in `frontend/auth.ts`
+- [x] T022 Configure Drizzle ORM for Better Auth in `frontend/drizzle.config.ts`
+- [x] T023 Create Better Auth database schema in `frontend/src/lib/db/schema.ts`
+- [x] T024 Create Better Auth client configuration in `frontend/src/lib/auth.ts`
+- [x] T025 Create Better Auth React hooks in `frontend/src/lib/auth-client.ts`
+- [x] T026 Setup Better Auth API routes in `frontend/src/app/api/auth/[...all]/route.ts`
+- [x] T027 Create root layout with providers in `frontend/src/app/layout.tsx`
+- [x] T028 Create base TypeScript interfaces in `frontend/src/types/index.ts`
+- [x] T029 Create API client with JWT support in `frontend/src/lib/api.ts`
+- [x] T030 Create form validation utilities in `frontend/src/lib/validations.ts`
 
 ### Shared UI Components
 
-- [ ] T031 [P] Create Button component in `frontend/src/components/ui/Button.tsx`
-- [ ] T032 [P] Create Input component in `frontend/src/components/ui/Input.tsx`
-- [ ] T033 [P] Create Card component in `frontend/src/components/ui/Card.tsx`
+- [x] T031 [P] Create Button component in `frontend/src/components/ui/Button.tsx`
+- [x] T032 [P] Create Input component in `frontend/src/components/ui/Input.tsx`
+- [x] T033 [P] Create Card component in `frontend/src/components/ui/Card.tsx`
 
 **Checkpoint**: Foundation ready - user story implementation can now begin
 
@@ -94,12 +94,12 @@
 
 ### Implementation for User Story 1
 
-- [ ] T034 [P] [US1] Create SignUpForm component in `frontend/src/components/auth/SignUpForm.tsx`
-- [ ] T035 [US1] Create sign-up page in `frontend/src/app/(auth)/sign-up/page.tsx`
-- [ ] T036 [US1] Add email validation (format check) to SignUpForm
-- [ ] T037 [US1] Add password validation (min 8 chars) to SignUpForm
-- [ ] T038 [US1] Handle registration errors (email exists) in SignUpForm
-- [ ] T039 [US1] Auto-redirect to tasks page on successful registration
+- [x] T034 [P] [US1] Create SignUpForm component in `frontend/src/components/auth/SignUpForm.tsx`
+- [x] T035 [US1] Create sign-up page in `frontend/src/app/(auth)/sign-up/page.tsx`
+- [x] T036 [US1] Add email validation (format check) to SignUpForm
+- [x] T037 [US1] Add password validation (min 8 chars) to SignUpForm
+- [x] T038 [US1] Handle registration errors (email exists) in SignUpForm
+- [x] T039 [US1] Auto-redirect to tasks page on successful registration
 
 **Checkpoint**: User Story 1 complete - visitors can register and are auto-signed-in
 
@@ -119,13 +119,13 @@
 
 ### Implementation for User Story 2
 
-- [ ] T040 [P] [US2] Create SignInForm component in `frontend/src/components/auth/SignInForm.tsx`
-- [ ] T041 [US2] Create sign-in page in `frontend/src/app/(auth)/sign-in/page.tsx`
-- [ ] T042 [US2] Handle sign-in errors with generic message in SignInForm
-- [ ] T043 [US2] Create protected layout with auth check in `frontend/src/app/(protected)/layout.tsx`
-- [ ] T044 [US2] Add sign-out functionality to protected layout
-- [ ] T045 [US2] Create landing page with auth redirect logic in `frontend/src/app/page.tsx`
-- [ ] T046 [US2] Redirect unauthenticated users to sign-in page
+- [x] T040 [P] [US2] Create SignInForm component in `frontend/src/components/auth/SignInForm.tsx`
+- [x] T041 [US2] Create sign-in page in `frontend/src/app/(auth)/sign-in/page.tsx`
+- [x] T042 [US2] Handle sign-in errors with generic message in SignInForm
+- [x] T043 [US2] Create protected layout with auth check in `frontend/src/app/(protected)/layout.tsx`
+- [x] T044 [US2] Add sign-out functionality to protected layout
+- [x] T045 [US2] Create landing page with auth redirect logic in `frontend/src/app/page.tsx`
+- [x] T046 [US2] Redirect unauthenticated users to sign-in page
 
 **Checkpoint**: User Stories 1 & 2 complete - full auth flow working
 
@@ -145,19 +145,19 @@
 
 ### Backend Implementation for User Story 3
 
-- [ ] T047 [US3] Create TaskService with create method in `backend/app/services/task.py`
-- [ ] T048 [US3] Create `backend/app/services/__init__.py` with service exports
-- [ ] T049 [US3] Implement POST /tasks endpoint in `backend/app/api/tasks.py`
-- [ ] T050 [US3] Create `backend/app/api/__init__.py` with router setup
-- [ ] T051 [US3] Register tasks router in `backend/app/main.py`
+- [x] T047 [US3] Create TaskService with create method in `backend/app/services/task.py`
+- [x] T048 [US3] Create `backend/app/services/__init__.py` with service exports
+- [x] T049 [US3] Implement POST /tasks endpoint in `backend/app/api/tasks.py`
+- [x] T050 [US3] Create `backend/app/api/__init__.py` with router setup
+- [x] T051 [US3] Register tasks router in `backend/app/main.py`
 
 ### Frontend Implementation for User Story 3
 
-- [ ] T052 [P] [US3] Create TaskForm component in `frontend/src/components/TaskForm.tsx`
-- [ ] T053 [US3] Add create task API call to `frontend/src/lib/api.ts`
-- [ ] T054 [US3] Add title validation (1-200 chars) to TaskForm
-- [ ] T055 [US3] Add description validation (max 2000 chars) to TaskForm
-- [ ] T056 [US3] Handle create task success with list refresh
+- [x] T052 [P] [US3] Create TaskForm component in `frontend/src/components/TaskForm.tsx`
+- [x] T053 [US3] Add create task API call to `frontend/src/lib/api.ts`
+- [x] T054 [US3] Add title validation (1-200 chars) to TaskForm
+- [x] T055 [US3] Add description validation (max 2000 chars) to TaskForm
+- [x] T056 [US3] Handle create task success with list refresh
 
 **Checkpoint**: User Story 3 complete - users can create tasks
 
@@ -177,18 +177,18 @@
 
 ### Backend Implementation for User Story 4
 
-- [ ] T057 [US4] Add list method (with user_id filter) to TaskService in `backend/app/services/task.py`
-- [ ] T058 [US4] Implement GET /tasks endpoint with pagination in `backend/app/api/tasks.py`
-- [ ] T059 [US4] Add completed filter query parameter support
+- [x] T057 [US4] Add list method (with user_id filter) to TaskService in `backend/app/services/task.py`
+- [x] T058 [US4] Implement GET /tasks endpoint with pagination in `backend/app/api/tasks.py`
+- [x] T059 [US4] Add completed filter query parameter support
 
 ### Frontend Implementation for User Story 4
 
-- [ ] T060 [P] [US4] Create TaskItem component in `frontend/src/components/TaskItem.tsx`
-- [ ] T061 [P] [US4] Create TaskList component in `frontend/src/components/TaskList.tsx`
-- [ ] T062 [US4] Create tasks page in `frontend/src/app/(protected)/tasks/page.tsx`
-- [ ] T063 [US4] Add list tasks API call to `frontend/src/lib/api.ts`
-- [ ] T064 [US4] Display empty state when no tasks exist
-- [ ] T065 [US4] Visual distinction for completed vs incomplete tasks
+- [x] T060 [P] [US4] Create TaskItem component in `frontend/src/components/TaskItem.tsx`
+- [x] T061 [P] [US4] Create TaskList component in `frontend/src/components/TaskList.tsx`
+- [x] T062 [US4] Create tasks page in `frontend/src/app/(protected)/tasks/page.tsx`
+- [x] T063 [US4] Add list tasks API call to `frontend/src/lib/api.ts`
+- [x] T064 [US4] Display empty state when no tasks exist
+- [x] T065 [US4] Visual distinction for completed vs incomplete tasks
 
 **Checkpoint**: User Stories 3 & 4 complete - create and view tasks working
 
@@ -208,19 +208,19 @@
 
 ### Backend Implementation for User Story 5
 
-- [ ] T066 [US5] Add get_by_id method (with user_id) to TaskService in `backend/app/services/task.py`
-- [ ] T067 [US5] Add update method (with user_id) to TaskService in `backend/app/services/task.py`
-- [ ] T068 [US5] Implement GET /tasks/{id} endpoint in `backend/app/api/tasks.py`
-- [ ] T069 [US5] Implement PUT /tasks/{id} endpoint in `backend/app/api/tasks.py`
-- [ ] T070 [US5] Implement PATCH /tasks/{id} endpoint in `backend/app/api/tasks.py`
-- [ ] T071 [US5] Return 404 for both not-found and wrong-user (prevent enumeration)
+- [x] T066 [US5] Add get_by_id method (with user_id) to TaskService in `backend/app/services/task.py`
+- [x] T067 [US5] Add update method (with user_id) to TaskService in `backend/app/services/task.py`
+- [x] T068 [US5] Implement GET /tasks/{id} endpoint in `backend/app/api/tasks.py`
+- [x] T069 [US5] Implement PUT /tasks/{id} endpoint in `backend/app/api/tasks.py`
+- [x] T070 [US5] Implement PATCH /tasks/{id} endpoint in `backend/app/api/tasks.py`
+- [x] T071 [US5] Return 404 for both not-found and wrong-user (prevent enumeration)
 
 ### Frontend Implementation for User Story 5
 
-- [ ] T072 [US5] Add edit mode to TaskItem component
-- [ ] T073 [US5] Add update task API calls to `frontend/src/lib/api.ts`
-- [ ] T074 [US5] Handle update validation errors in TaskItem
-- [ ] T075 [US5] Optimistic UI update on successful edit
+- [x] T072 [US5] Add edit mode to TaskItem component
+- [x] T073 [US5] Add update task API calls to `frontend/src/lib/api.ts`
+- [x] T074 [US5] Handle update validation errors in TaskItem
+- [x] T075 [US5] Optimistic UI update on successful edit
 
 **Checkpoint**: User Story 5 complete - users can edit tasks
 
@@ -240,10 +240,10 @@
 
 ### Frontend Implementation for User Story 6
 
-- [ ] T076 [US6] Add toggle complete functionality to TaskItem component
-- [ ] T077 [US6] Add patch task status API call to `frontend/src/lib/api.ts`
-- [ ] T078 [US6] Apply visual styling (strikethrough) for completed tasks
-- [ ] T079 [US6] Optimistic UI update on status toggle
+- [x] T076 [US6] Add toggle complete functionality to TaskItem component
+- [x] T077 [US6] Add patch task status API call to `frontend/src/lib/api.ts`
+- [x] T078 [US6] Apply visual styling (strikethrough) for completed tasks
+- [x] T079 [US6] Optimistic UI update on status toggle
 
 **Checkpoint**: User Story 6 complete - users can toggle task status
 
@@ -263,15 +263,15 @@
 
 ### Backend Implementation for User Story 7
 
-- [ ] T080 [US7] Add delete method (with user_id) to TaskService in `backend/app/services/task.py`
-- [ ] T081 [US7] Implement DELETE /tasks/{id} endpoint in `backend/app/api/tasks.py`
+- [x] T080 [US7] Add delete method (with user_id) to TaskService in `backend/app/services/task.py`
+- [x] T081 [US7] Implement DELETE /tasks/{id} endpoint in `backend/app/api/tasks.py`
 
 ### Frontend Implementation for User Story 7
 
-- [ ] T082 [US7] Add delete button to TaskItem component
-- [ ] T083 [US7] Add confirmation dialog before delete
-- [ ] T084 [US7] Add delete task API call to `frontend/src/lib/api.ts`
-- [ ] T085 [US7] Remove task from list on successful delete
+- [x] T082 [US7] Add delete button to TaskItem component
+- [x] T083 [US7] Add confirmation dialog before delete
+- [x] T084 [US7] Add delete task API call to `frontend/src/lib/api.ts`
+- [x] T085 [US7] Remove task from list on successful delete
 
 **Checkpoint**: User Story 7 complete - users can delete tasks
 
@@ -281,15 +281,15 @@
 
 **Purpose**: Final improvements across all user stories
 
-- [ ] T086 [P] Add loading states for all async operations in frontend components
-- [ ] T087 [P] Add error toast/alert component for API errors in `frontend/src/components/ui/Toast.tsx`
-- [ ] T088 [P] Add health check endpoint in `backend/app/main.py`
-- [ ] T089 Implement session expiry handling (redirect to sign-in on 401)
-- [ ] T090 Add client-side validation messages for all forms
-- [ ] T091 Run quickstart.md validation - verify both services start and connect
-- [ ] T092 Verify CORS configuration works in development
-- [ ] T093 [P] Create Dockerfile for backend in `backend/Dockerfile`
-- [ ] T094 [P] Configure Next.js for production build in `frontend/next.config.js`
+- [x] T086 [P] Add loading states for all async operations in frontend components
+- [x] T087 [P] Add error toast/alert component for API errors in `frontend/src/components/ui/Toast.tsx`
+- [x] T088 [P] Add health check endpoint in `backend/app/main.py`
+- [x] T089 Implement session expiry handling (redirect to sign-in on 401)
+- [x] T090 Add client-side validation messages for all forms
+- [x] T091 Run quickstart.md validation - verify both services start and connect
+- [x] T092 Verify CORS configuration works in development
+- [x] T093 [P] Create Dockerfile for backend in `backend/Dockerfile`
+- [x] T094 [P] Configure Next.js for production build in `frontend/next.config.js`
 
 ---
 
