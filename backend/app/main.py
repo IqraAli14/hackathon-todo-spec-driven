@@ -11,7 +11,12 @@ from app.config import settings
 @asynccontextmanager
 async def lifespan(app: FastAPI) -> AsyncIterator[None]:
     """Application lifespan handler."""
-    # Startup
+    # Startup: ensure tables exist (dev only; use migrations in production)
+    if settings.is_development:
+        from app.models.task import Task  # noqa: F401 – register model with SQLModel
+        from app.database import init_db
+
+        await init_db()
     yield
     # Shutdown
 

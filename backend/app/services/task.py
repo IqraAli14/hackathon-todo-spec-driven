@@ -3,6 +3,7 @@ from typing import Optional
 from uuid import UUID
 
 from sqlalchemy.ext.asyncio import AsyncSession
+from sqlalchemy import func
 from sqlmodel import select
 
 from app.models import Task
@@ -42,16 +43,16 @@ class TaskService:
             query = query.where(Task.completed == completed)
 
         # Count total before pagination
-        count_query = select(Task).where(Task.user_id == user_id)
+        count_query = select(func.count()).select_from(Task).where(Task.user_id == user_id)
         if completed is not None:
             count_query = count_query.where(Task.completed == completed)
-        result = await self.db.exec(count_query)
-        total = len(result.all())
+        result = await self.db.execute(count_query)
+        total = result.scalar() or 0
 
         # Apply pagination and ordering
         query = query.order_by(Task.created_at.desc()).offset(offset).limit(limit)
-        result = await self.db.exec(query)
-        tasks = result.all()
+        result = await self.db.execute(query)
+        tasks = result.scalars().all()
 
         return list(tasks), total
 
@@ -59,8 +60,8 @@ class TaskService:
         """Get a specific task by ID for a user."""
         # Include user_id in WHERE to prevent unauthorized access (FR-014)
         query = select(Task).where(Task.id == task_id, Task.user_id == user_id)
-        result = await self.db.exec(query)
-        return result.first()
+        result = await self.db.execute(query)
+        return result.scalars().first()
 
     async def update(
         self, task_id: UUID, user_id: str, data: TaskUpdate
