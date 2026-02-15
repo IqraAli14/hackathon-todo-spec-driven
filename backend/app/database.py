@@ -6,9 +6,12 @@ from sqlmodel import SQLModel
 
 from app.config import settings
 
+# asyncpg does not accept "sslmode"; convert to "ssl" for compatibility
+_db_url = settings.database_url.replace("sslmode=", "ssl=")
+
 # Create async engine with connection pooling
 engine = create_async_engine(
-    settings.database_url,
+    _db_url,
     echo=settings.is_development,
     pool_pre_ping=True,
     pool_size=5,
